@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 
 @Data //Getter & Setter
@@ -35,8 +36,15 @@ public class Board {
     @ManyToOne //Many=Board(Foreign key), User=One(Primary Key). 한 명의 유저는 여러개의 게시글을 쓸 수 있음.
     @JoinColumn(name = "userID")
     private User user; //DB는 오브젝트를 저장할 수 없음. 따라서 Foregin Key를 사용하는데, 자바는 오브젝트를 저장할 수 잇다.
-                        // -> 자바와 DB가 충돌 나기 때문에 자바가 DB에 맞춰서 저장해줌.
-                        // -> User오브젝트가 Foregin Key가 되어 key값을 테이블에 저장됨. (User테이블의 ID가 컬럼명:'userID' 타입:integer형으로 저장됨)
+    // -> 자바와 DB가 충돌 나기 때문에 자바가 DB에 맞춰서 저장해줌.
+    // -> User오브젝트가 Foregin Key가 되어 key값을 테이블에 저장됨. (User테이블의 ID가 컬럼명:'userID' 타입:integer형으로 저장됨)
+
+
+    //mappedBy: 연관관계의 주인이 아니다(난 FK가 아니에요) DB에 칼럼 만들지 마세요
+    //난 그냥 Board를 select할 때 Reply테이블과 Join을 하기위해서 만들어 놓은 겁니다
+    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER) //Eager = 무조건 가져옴 //Lazy = 필요하면 가져옴
+    private List<Reply> reply;
+    
 
     @CreationTimestamp
     private Timestamp createDate;

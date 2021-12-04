@@ -22,7 +22,7 @@ spring:
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: create #프로젝트를 실행할 때 마다 drop하고 create한다. 고로 최초에만 create하고 이후에는 update로 바꿔야함.
+      ddl-auto: update  #프로젝트를 실행할 때 마다 drop하고 create한다. 고로 최초에만 create하고 이후에는 update로 바꿔야함.
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #엔티티(테이블)를 만들 때, 변수명 그대로 테이불에 넣어준다.
       use-new-id-generator-mappings: false #jpa가 사용하는 기본 넘버링을 사용할것인가? 우리는 연결된 DB의 넘버릴 전략을 쓸 것이기 때문에 false
