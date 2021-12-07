@@ -1,15 +1,14 @@
 let index={
     init: function () {
-        $("#btn-join").on("click", ()=>{ //()={} 이걸 쓴 이유: this를 바인딩하기 위함.
+        $("#btn-save").on("click", ()=>{ //()={} 이걸 쓴 이유: this를 바인딩하기 위함.
             this.save();
         });
     },
 
     save: function () {
         let data={
-            username:$("#username").val(), //username이라는 변수에 id가 username인 것의 값을 찾아서 저장.
-            password:$("#password").val(),
-            email:$("#email").val(),
+            title:$("#title").val(),
+            content:$("#content").val(),
         };
 
         console.log(data);
@@ -17,13 +16,13 @@ let index={
         //ajax호출시 default가 비동기호출.
         $.ajax({ //요청
             type:"POST", //=insert
-            url:"/auth/joinProc",
+            url:"/api/board",
             data: JSON.stringify(data), //data는 js오브젝트이므로, JSON문자열로 변환. http body데이터.
             contentType: "application/json; charset=utf-8", //body데이터가 어떤 타입인지(MIME TYPE)
             dataType:"json" //응답이 json이라면, js오브젝트로 변경해줌
 
         }).done(function (response){ //ajax의 리턴값이 response로 들어옴. 정상이면 실행
-            alert("회원가입이 완료되었습니다");
+            alert("글쓰기가 완료되었습니다");
             location.href = "/";
         }).fail(function(error){ //실패하면 fail실행
             alert(JSON.stringify(error));

@@ -4,32 +4,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import wonseok.yang.portfolioblog.model.Board;
 import wonseok.yang.portfolioblog.model.RoleType;
 import wonseok.yang.portfolioblog.model.User;
+import wonseok.yang.portfolioblog.repository.BoardRepository;
 import wonseok.yang.portfolioblog.repository.UserRepository;
+
+import java.util.List;
 
 
 @Service
-public class UserService {
+public class BoardService {
 
     @Autowired
-    private UserRepository userRepository;
+    private BoardRepository boardRepository;
 
-    @Autowired
-    private BCryptPasswordEncoder encoder;
+
+    public List<Board> 글목록() {
+        return boardRepository.findAll();
+    }
 
     @Transactional //성공하면 commit, 실패하면 rollback
-    public int 회원가입(User user) {
+    public int 글쓰기(Board board, User user) { //title, content
         try {
-            String rawPassword = user.getPassword();
-            String encPassword = encoder.encode(rawPassword);
-            user.setPassword(encPassword);
-            user.setRole(RoleType.USER);
-            userRepository.save(user);
+            board.setUser(user);
+            boardRepository.save(board);
             return 1;
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("UserService:회원가입(): " + e.getMessage());
+            System.out.println("UserService:글쓰기(): " + e.getMessage());
             return -1;
         }
     }
