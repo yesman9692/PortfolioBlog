@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +13,36 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="/blog/">HOME</a>
+    <a class="navbar-brand" href="/">HOME</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/blog/user/loginForm">로그인</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/blog/user/joinForm">회원가입</a>
-            </li>
-        </ul>
+        <c:choose><%--JSTL 조건문--%>
+        <c:when test="${empty sessionScope.principal}"> <%--만약 세션이 없다면--%>
+            <ul class="navbar-nav"><%--네비게이션 바에서 로그인, 회원가입만 보여줌--%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/loginForm">로그인</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/joinForm">회원가입</a>
+                </li>
+            </ul>
+        </c:when>
+        <c:otherwise><%--세션이 있다면--%>
+            <ul class="navbar-nav">
+                <li class="nav-item"><%--네비게이션 바에서 글쓰기, 회원정보, 로그아웃 보여줌--%>
+                    <a class="nav-link" href="/board/form">글쓰기</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/form">회원정보</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">로그아웃</a>
+                </li>
+            </ul>
+        </c:otherwise>
+        </c:choose>
     </div>
 </nav>

@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BoardController {
 
     @GetMapping("/")
+    public String main() {
+        return "main";
+    }
+
+    @GetMapping("/index")
     public String index() {
         return "index";
     }

@@ -2,14 +2,14 @@
 <%@ include file="../layout/header.jsp" %>
 
 <div class="container">
-    <form >
+    <form>
         <div class="form-group">
             <label for="username">Username:</label>
             <input type="email" class="form-control" placeholder="Enter username" id="username">
         </div>
         <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" placeholder="Enter password" id="password">
         </div>
         <div class="form-group form-check">
             <label class="form-check-label">
@@ -17,9 +17,10 @@
             </label>
         </div>
     </form>
-    <button id="btn-login" class="btn btn-primary">로그인</button> <%--user.js로 넘김--%>
+    <button id="btn-login" class="btn btn-primary">로그인</button>
 </div>
-
+<script src="/js/user.js"></script>
+<%--"blog/api/user/login"--%>
 <%@ include file="../layout/footer.jsp" %>
 
 

@@ -8,8 +8,8 @@
             <input type="text" class="form-control" placeholder="Enter username" id="username">
         </div>
         <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" placeholder="Enter password" id="password">
         </div>
         <div class="form-group">
             <label for="email">E-mail:</label>
@@ -19,7 +19,7 @@
     <button id="btn-join" class="btn btn-primary">회원가입</button> <%--user.js로 넘김--%>
 </div>
 
-<script src="/blog/js/user.js"></script>
+<script src="/js/user.js"></script>
 <%@ include file="../layout/footer.jsp" %>
 
 
