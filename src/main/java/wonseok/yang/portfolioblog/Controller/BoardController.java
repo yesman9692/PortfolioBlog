@@ -13,6 +13,11 @@ public class BoardController {
     private BoardService boardService;
 
     @GetMapping({"", "/"})
+    public String index(Model model) {
+        return "index";
+    }
+
+    @GetMapping("/main")
     public String main(Model model) {
         model.addAttribute("boards", boardService.글목록());
         return "main";

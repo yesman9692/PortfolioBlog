@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <title>방문을 환영합니다</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="/">Home</a>
+                <a class="navbar-brand" href="/main">HOME</a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -39,9 +39,11 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/profile.svg" alt="..." />
+                <img class="masthead-avatar mb-5" src="assets/img/avatar.png" alt="..." />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">양원석</h1>
+                <br>
+                <p class="masthead-subheading font-weight-light mb-0">웹 백엔드 개발자</p>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -49,20 +51,126 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+                <p class="masthead-subheading font-weight-light mb-0">이 프로젝트는 SpringBoot로 만들었습니다</p>
+                <p class="masthead-subheading font-weight-light mb-0">🛠현재 공사중(12/3 ~ )🛠</p>
             </div>
         </header>
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
+                <div class="subject">
+                    <!-- Portfolio Section Heading-->
+                    <div class="subtitle">
+                        <h2 class="page-section-heading text-start text-uppercase text-secondary mb-0">🎵대외활동</h2>
+                        <br>
+                        <hr>
+                        <br>
+                    </div>
+                    <%--
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    --%>
+                    <div class="article">
+                        <h4>📌강원도 서포터즈 G-팔로윙</h4>
+                        <h6 style="text-indent: 35px">자원봉사 / 강원도청 / 2015.12 ~ 2016.01</h6>
+                        <p style="text-indent: 40px" class="masthead-subheading font-weight-light mb-0 text-start"> 강원도
+                            SNS
+                            서포터즈 G-팔로윙: 강원도 특산품을 직접 체험, 리뷰하고 SNS를 통하여 홍보</p>
+                        <br><br>
+                    </div>
+                    <div class="article">
+                        <h4>📌알락달락 행복한 교실</h4>
+                        <h6 style="text-indent: 35px">자원봉사 / 한국과학창의재단 / 2016.06 ~ 2016.08</h6>
+                        <p style="text-indent: 40px" class="masthead-subheading font-weight-light mb-0 text-start"> 초등학교
+                            저학년
+                            학생들에게 방과후 수업으로 컴퓨터 교육 기부활동</p>
+                        <br><br>
+                    </div>
+                    <div class="article">
+                        <h4>📌한림대학교 음악감상실</h4>
+                        <h6 style="text-indent: 35px">학생자치기구 / 한림대학교 / 2019.01 ~ 2019.12</h6>
+                        <p style="text-indent: 40px" class="masthead-subheading font-weight-light mb-0 text-start">
+                            음악감상실
+                            실장으로서 1년간 학생자치기구를 이끎</p>
+                        <br><br>
+                    </div>
+                    <div class="article">
+                        <h4>📌해외 IT 현장실습</h4>
+                        <h6 style="text-indent: 35px">해외연수 / 미국 / 2019.12 ~ 2020.01</h6>
+                        <p style="text-indent: 40px" class="masthead-subheading font-weight-light mb-0 text-start">
+                            University of Central Florida의 Simulation Interoperability Lab에서 웹페이지 제작 및 유지 보수</p>
+                        <br><br>
+                    </div>
                 </div>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="subject">
+                    <!-- Portfolio Section Heading-->
+                    <div class="subtitle">
+                        <h2 class="page-section-heading text-start text-uppercase text-secondary mb-0">📝자격증</h2>
+                        <br>
+                        <hr>
+                        <br>
+                    </div>
+                    <div class="article">
+                        <h4>📌정보처리기사</h4>
+                        <h6 style="text-indent: 35px">한국산업인력공단 / 2020.11</h6>
+                        <p style="text-indent: 40px" class="masthead-subheading font-weight-light mb-0 text-start">
+                            자격번호: 20203190052B </p>
+                        <br><br>
+                    </div>
+                    <div class="article">
+                        <h4>📌Azure Fundamentals</h4>
+                        <h6 style="text-indent: 35px">Microsoft / 2021.11</h6>
+                        <p style="text-indent: 40px" class="masthead-subheading font-weight-light mb-0 text-start">
+                            자격번호: 1037-7460 </p>
+                        <br><br>
+                    </div>
+                    </div>
+
+
+
+            <br>
+            <br>
+            <br>
+            <div class="subject">
+                <div class="subtitle">
+                    <h2 class="page-section-heading text-start text-uppercase text-secondary mb-0">🏆수상내역</h2>
+                    <br>
+                    <hr>
+                    <br>
+                </div>
+                <div class="article">
+                    <h4>📌Hallym SW WEEK 아이디어 공모전 </h4>
+                    <h6 style="text-indent: 35px">한림대학교 / 금상 / 2018.11</h6>
+                    <p style="text-indent: 40px" class="masthead-subheading font-weight-light mb-0 text-start">
+                        교내 아이디어 공모전에서 '중고나라 자동 업로드' 앱으로 금상 수상 </p>
+                    <br><br>
+                </div>
+                <div class="article">
+                    <h4>📌Hallym SW WEEK SW 공모전</h4>
+                    <h6 style="text-indent: 35px">한림대학교 / 금상 / 2019.11</h6>
+                    <p style="text-indent: 40px" class="masthead-subheading font-weight-light mb-0 text-start">
+                        교내 소프트웨어 공모전에서 '가정용 스마트팜'으로 금상 수상 </p>
+                    <br><br>
+                </div>
+            </div>
+            </div>
+
+
+                <!-- Portfolio Section Heading-->
+
+
+
+
+                <%--
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     <!-- Portfolio Item 1-->
@@ -71,7 +179,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/1.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/2.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -92,35 +200,10 @@
                             <img class="img-fluid" src="assets/img/portfolio/3.png" alt="..." />
                         </div>
                     </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/4.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/5.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/6.png" alt="..." />
-                        </div>
-                    </div>
+
                 </div>
-            </div>
+                --%>
+
         </section>
         <!-- About Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
@@ -140,7 +223,7 @@
                 </div>
                 <!-- About Section Button-->
                 <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="/">
+                    <a class="btn btn-xl btn-outline-light" href="/main">
 <%--                        <i class="fas fa-download me-2"></i>--%>
                         홈페이지로 가기
                     </a>
