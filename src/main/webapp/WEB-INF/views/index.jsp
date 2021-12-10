@@ -29,8 +29,8 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#footer">Footer</a></li>
+<%--                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>--%>
                     </ul>
                 </div>
             </div>
@@ -105,6 +105,14 @@
                             University of Central Florida의 Simulation Interoperability Lab에서 웹페이지 제작 및 유지 보수</p>
                         <br><br>
                     </div>
+                    <div class="article">
+                        <h4>📌학점연계 인턴</h4>
+                        <h6 style="text-indent: 35px">인턴 / 이글루시큐리티 / 2021.07 ~ 2021.12</h6>
+                        <p style="text-indent: 40px" class="masthead-subheading font-weight-light mb-0 text-start">
+                            이글루시큐리티 빅데이터연구소 클라우드팀에서 인턴으로 근무하며 웹 개발 및 테스트
+                        </p>
+                        <br><br>
+                    </div>
                 </div>
 
                 <br>
@@ -162,6 +170,11 @@
                     <br><br>
                 </div>
             </div>
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-light" href="/main">
+                        홈페이지로 가기
+                    </a>
+                </div>
             </div>
 
 
@@ -206,7 +219,7 @@
 
         </section>
         <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
+        <%--<section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
@@ -224,7 +237,7 @@
                 <!-- About Section Button-->
                 <div class="text-center mt-4">
                     <a class="btn btn-xl btn-outline-light" href="/main">
-<%--                        <i class="fas fa-download me-2"></i>--%>
+&lt;%&ndash;                        <i class="fas fa-download me-2"></i>&ndash;%&gt;
                         홈페이지로 가기
                     </a>
                 </div>
@@ -300,35 +313,36 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>--%>
         <!-- Footer-->
-        <footer class="footer text-center">
+        <footer class="footer text-center" id="footer">
             <div class="container">
                 <div class="row">
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <h4 class="text-uppercase mb-4">Contact</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
-                            <br />
-                            Clark, MO 65243
+                            010-7243-2443
+                            <br>
+                            yws090296@naver.com
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <h4 class="mb-4">Git Hub Address</h4>
+                        <p class="lead mb-0">
+                            <a href="https://github.com/yesman9692">https://github.com/yesman9692</a>
+                        </p>
+                        <%--<a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>--%>
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <h4 class="text-uppercase mb-4">About</h4>
                         <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
+                            Created by 양원석
                         </p>
                     </div>
                 </div>
@@ -336,7 +350,7 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2021</small></div>
+            <div class="container"><small>Copyright &copy; wonseokblog.ga 2021</small></div>
         </div>
         <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->

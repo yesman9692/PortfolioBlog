@@ -24,7 +24,7 @@ let index={
 
         }).done(function (response){ //ajax의 리턴값이 response로 들어옴. 정상이면 실행
             alert("회원가입이 완료되었습니다");
-            location.href = "/";
+            location.href = "/main";
         }).fail(function(error){ //실패하면 fail실행
             alert(JSON.stringify(error));
         }); //ajax통신을 이용해서 3개의 데이터를 json으로 변경하여 insert요청

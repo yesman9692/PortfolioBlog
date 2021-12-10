@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .formLogin() //로그인 폼으로 연결시켜줌
             .loginPage("/auth/loginForm")//로그인 폼 주소
             .loginProcessingUrl("/auth/loginProc") //스피링 시큐리티가 해당 주소로 들어오는 요청을 가로채서 대신 로그인 해줌
-            .defaultSuccessUrl("/") //로그인 성공하면 리턴되는 url
+            .defaultSuccessUrl("/main") //로그인 성공하면 리턴되는 url
         ;
     }
 }
