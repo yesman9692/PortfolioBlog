@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="layout/header.jsp" %>
 
 <div class="container" style="border-right: solid 1px lightgray; border-left: solid 1px lightgray">
@@ -37,6 +38,11 @@
             </c:otherwise>
         </c:choose>
     </ul>
+    <button type="button" class="btn btn-outline-primary" onclick="location.href='/board/saveForm'" style="float: right">글 쓰기</button>
+    <br>
+    <br>
+
+
 
 </div>
 

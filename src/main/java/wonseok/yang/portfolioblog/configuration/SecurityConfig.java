@@ -39,17 +39,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-          .csrf().disable()
-          .authorizeHttpRequests()
-            .antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**", "/dummy/**") //auth/~주소로 들어온 요청들은
-            .permitAll() //모두 접근 가능
-            .anyRequest() //아닌 요청은
-            .authenticated() //auth가 필요함
-          .and()
-            .formLogin() //로그인 폼으로 연결시켜줌
-            .loginPage("/auth/loginForm")//로그인 폼 주소
-            .loginProcessingUrl("/auth/loginProc") //스피링 시큐리티가 해당 주소로 들어오는 요청을 가로채서 대신 로그인 해줌
-            .defaultSuccessUrl("/main") //로그인 성공하면 리턴되는 url
+                .csrf().disable()
+                .authorizeHttpRequests()
+                .antMatchers("/", "/main", "/auth/**", "/js/**", "/css/**", "/assets/**", "/dummy/**") //auth/~주소로 들어온 요청들은
+                .permitAll() //모두 접근 가능
+                .anyRequest() //아닌 요청은
+                .authenticated() //auth가 필요함
+                .and()
+                .formLogin() //로그인 폼으로 연결시켜줌
+                .loginPage("/auth/loginForm")//로그인 폼 주소
+                .loginProcessingUrl("/auth/loginProc") //스피링 시큐리티가 해당 주소로 들어오는 요청을 가로채서 대신 로그인 해줌
+                .defaultSuccessUrl("/main") //로그인 성공하면 리턴되는 url
         ;
     }
 }

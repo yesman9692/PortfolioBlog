@@ -39,9 +39,9 @@
         </c:when>
         <c:otherwise><%--세션이 있다면--%>
             <ul class="navbar-nav">
-                <li class="nav-item"><%--네비게이션 바에서 글쓰기, 회원정보, 로그아웃 보여줌--%>
+                <%--<li class="nav-item">&lt;%&ndash;네비게이션 바에서 글쓰기, 회원정보, 로그아웃 보여줌&ndash;%&gt;
                     <a class="nav-link" href="/board/saveForm">글쓰기</a>
-                </li>
+                </li>--%>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/updateForm">회원정보</a>
                 </li>
