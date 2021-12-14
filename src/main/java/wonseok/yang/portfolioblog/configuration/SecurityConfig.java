@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
           .csrf().disable()
           .authorizeHttpRequests()
-            .antMatchers("**") //auth/~주소로 들어온 요청들은
+            .antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**", "/dummy/**") //auth/~주소로 들어온 요청들은
             .permitAll() //모두 접근 가능
             .anyRequest() //아닌 요청은
             .authenticated() //auth가 필요함

@@ -1,6 +1,8 @@
 package wonseok.yang.portfolioblog.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,8 +22,9 @@ public class BoardService {
     private BoardRepository boardRepository;
 
 
-    public List<Board> 글목록() {
-        return boardRepository.findAll();
+    public Page<Board> 글목록(Pageable pageable)
+    {
+        return boardRepository.findAll(pageable);
     }
 
     @Transactional //성공하면 commit, 실패하면 rollback
