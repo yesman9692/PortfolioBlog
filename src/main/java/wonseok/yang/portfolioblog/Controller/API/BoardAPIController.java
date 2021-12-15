@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import wonseok.yang.portfolioblog.DTO.ResponseDTO;
 import wonseok.yang.portfolioblog.configuration.auth.PrincipalDetail;
 import wonseok.yang.portfolioblog.model.JobBoard;
+import wonseok.yang.portfolioblog.model.SocialBoard;
 import wonseok.yang.portfolioblog.service.BoardService;
 
 @RestController
@@ -17,9 +18,15 @@ public class BoardAPIController {
     @Autowired
     private BoardService boardService;
 
-    @PostMapping("/api/board")
-    public ResponseDTO<Integer> save(@RequestBody JobBoard board, @AuthenticationPrincipal PrincipalDetail principalDetail) {
-        boardService.글쓰기(board, principalDetail.getUser());
+    @PostMapping("/api/jobBoard")
+    public ResponseDTO<Integer> job_save(@RequestBody JobBoard jobBoard, @AuthenticationPrincipal PrincipalDetail principalDetail) {
+        boardService.글쓰기(jobBoard, principalDetail.getUser());
+        return new ResponseDTO<Integer>(HttpStatus.OK, 1);
+    }
+
+    @PostMapping("/api/socialBoard")
+    public ResponseDTO<Integer> social_save(@RequestBody SocialBoard socialBoard, @AuthenticationPrincipal PrincipalDetail principalDetail) {
+        boardService.글쓰기(socialBoard, principalDetail.getUser());
         return new ResponseDTO<Integer>(HttpStatus.OK, 1);
     }
 

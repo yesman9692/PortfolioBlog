@@ -3,7 +3,7 @@
 <br>
 <div class="jumbotron text-center" style="margin-bottom:0">
     <p>Created by 양원석</p>
-    <p>Spring Boot / Bootstrap</p>
+    <a href="https://github.com/yesman9692" style="color:black;"><p>https://github.com/yesman9692</p></a>
     <p>yws090296@naver.com</p>
     <p>010-7243-2443</p>
 </div>

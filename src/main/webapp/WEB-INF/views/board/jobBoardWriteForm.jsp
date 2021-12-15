@@ -20,7 +20,7 @@
             });
         </script>
     </form>
-    <button id="btn-save" class="btn btn-primary">글쓰기 완료</button>
+    <button id="btn-job-save" class="btn btn-primary">글쓰기 완료</button>
 
 </div>
 

@@ -6,8 +6,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import wonseok.yang.portfolioblog.model.JobBoard;
+import wonseok.yang.portfolioblog.model.SocialBoard;
 import wonseok.yang.portfolioblog.model.User;
 import wonseok.yang.portfolioblog.repository.JobBoardRepository;
+import wonseok.yang.portfolioblog.repository.SocialBoardRepository;
 
 
 @Service
@@ -16,16 +18,35 @@ public class BoardService {
     @Autowired
     private JobBoardRepository jobBoardRepository;
 
+    @Autowired
+    private SocialBoardRepository socialBoardRepository;
 
-    public Page<JobBoard> 글목록(Pageable pageable)
-    {
+
+    public Page<JobBoard> 글목록j(Pageable pageable) {
+        System.out.println("글목록j 호출");
         return jobBoardRepository.findAll(pageable);
     }
+    
+    public Page<SocialBoard> 글목록s(Pageable pageable) {
+        System.out.println("글목록s 호출");
+        return socialBoardRepository.findAll(pageable); 
+    }
 
-    public JobBoard 글상세보기(int id) {
+    public JobBoard jobBoardDetail(int id) {
+        System.out.println("job board id:" + id);
         return jobBoardRepository.findById(id)
                 .orElseThrow(() -> {
-                    return new IllegalArgumentException("글 상세보기 실패: 아이디를 찾을 수 없습니다");
+                    System.out.println("job 글 상세보기 실패, id: " + id);
+                    return new IllegalArgumentException("job 글 상세보기 실패: 아이디를 찾을 수 없습니다");
+                });
+    }
+
+    public SocialBoard socialBoardDetail(int id) {
+        System.out.println("social board id:" + id);
+        return socialBoardRepository.findById(id)
+                .orElseThrow(() -> {
+                    System.out.println("social 글 상세보기 실패, id: " + id);
+                    return new IllegalArgumentException("social 글 상세보기 실패: 아이디를 찾을 수 없습니다");
                 });
     }
 
@@ -34,6 +55,19 @@ public class BoardService {
         try {
             board.setUser(user);
             jobBoardRepository.save(board);
+            return 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("UserService:글쓰기(): " + e.getMessage());
+            return -1;
+        }
+    }
+
+    @Transactional
+    public int 글쓰기(SocialBoard board, User user) { //title, content
+        try {
+            board.setUser(user);
+            socialBoardRepository.save(board);
             return 1;
         } catch (Exception e) {
             e.printStackTrace();

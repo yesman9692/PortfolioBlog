@@ -7,16 +7,16 @@
     <br>
     <br>
     <div class="form-group">
-        <h3>${board.title}</h3>
+        <h3>${socialBoard.title}</h3>
     </div>
     <hr/>
     <div class="form-group">
-        <div>
-            ${board.content}
+        <div style= "word-break:break-all" >
+            ${socialBoard.content}
         </div>
     </div>
     <hr/>
-    <button id="btn-return" type="button" class="btn btn-outline-primary" onclick="location.href='/board/jobBoard'" style="float: left">목록</button>
+    <button id="btn-return" type="button" class="btn btn-outline-primary" onclick="location.href='/board/socialBoard'" style="float: left">목록</button>
     <button id="btn-delete" type="button" class="btn btn-primary" onclick="location.href='/board/saveForm'" style="float: right">삭제</button>
     <button id="btn-update" type="button" class="btn btn-outline-primary" onclick="location.href='/board/saveForm'" style="float: right; margin-right: 3px">수정</button>
     <br>
