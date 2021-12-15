@@ -27,6 +27,13 @@ public class BoardService {
         return boardRepository.findAll(pageable);
     }
 
+    public Board 글상세보기(int id) {
+        return boardRepository.findById(id)
+                .orElseThrow(() -> {
+                    return new IllegalArgumentException("글 상세보기 실패: 아이디를 찾을 수 없습니다");
+                });
+    }
+
     @Transactional //성공하면 commit, 실패하면 rollback
     public int 글쓰기(Board board, User user) { //title, content
         try {
