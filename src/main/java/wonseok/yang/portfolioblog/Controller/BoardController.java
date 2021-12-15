@@ -29,10 +29,16 @@ public class BoardController { //컨트롤러
         return "index";
     }
 
-    @GetMapping("/main")
-    public String main(Model model, @PageableDefault(size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+    @GetMapping("/board/jobBoard")
+    public String jobBoard(Model model, @PageableDefault(size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
         model.addAttribute("boards", boardService.글목록(pageable));
-        return "main";
+        return "/board/jobBoard";
+    }
+
+    @GetMapping("/board/socialBoard")
+    public String socialBoard(Model model, @PageableDefault(size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+        model.addAttribute("boards", boardService.글목록(pageable));
+        return "/board/socialBoard";
     }
 
     @GetMapping("/board/saveForm")

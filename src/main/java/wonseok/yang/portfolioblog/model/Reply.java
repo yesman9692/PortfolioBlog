@@ -26,7 +26,7 @@ public class Reply {
 
     @ManyToOne //하나의 게시글에 여러개의 답글이 존재할 수 있음 <-> 하나의 답글에 여러개의 게시글이 존재 할 수 있음?(x)
     @JoinColumn(name = "boardID")
-    private Board board; //어느 게시글에 달린 답변인지 알기위해 Foreign Key 설정 //Board타입이기 때문에 알아서 Board테이블로 찾아감
+    private JobBoard board; //어느 게시글에 달린 답변인지 알기위해 Foreign Key 설정 //Board타입이기 때문에 알아서 Board테이블로 찾아감
 
     @ManyToOne
     @JoinColumn(name = "userID")

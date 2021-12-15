@@ -2,13 +2,14 @@
 <%@ include file="../layout/header.jsp" %>
 
 <div class="container">
+    <br>
     <form>
         <div class="form-group">
-            <label for="title">Username:</label>
+            <label for="title">제목</label>
             <input type="text" class="form-control" placeholder="Enter title" id="title">
         </div>
         <div class="form-group">
-            <label for="content">content:</label>
+            <label for="content">내용</label>
             <textarea class="form-control summernote" rows="5" id="content"></textarea>
         </div>
 

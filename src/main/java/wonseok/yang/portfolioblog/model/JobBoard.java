@@ -18,7 +18,7 @@ import java.util.List;
 @Builder //생성자 호출 시, 객체.builder().매개변수("").매개변수("")...build(); 해서 원하는 매개변수만 사용하여 호출가능
 @Entity //테이블화 시키는 어노테이션. 프로젝트가 실행될 때 이 클래스를 읽어서, 자동으로 MySQL에 테이블이 생성됨
 //JPA(=ORM) -> Java 오브젝트를 Table로 매핑해주는 기술.
-public class Board {
+public class JobBoard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto increment

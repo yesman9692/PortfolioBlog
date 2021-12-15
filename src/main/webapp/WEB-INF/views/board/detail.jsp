@@ -16,7 +16,7 @@
         </div>
     </div>
     <hr/>
-    <button id="btn-return" type="button" class="btn btn-outline-primary" onclick="location.href='/board/saveForm'" style="float: left">목록</button>
+    <button id="btn-return" type="button" class="btn btn-outline-primary" onclick="location.href='/board/jobBoard'" style="float: left">목록</button>
     <button id="btn-delete" type="button" class="btn btn-primary" onclick="location.href='/board/saveForm'" style="float: right">삭제</button>
     <button id="btn-update" type="button" class="btn btn-outline-primary" onclick="location.href='/board/saveForm'" style="float: right; margin-right: 3px">수정</button>
     <br>

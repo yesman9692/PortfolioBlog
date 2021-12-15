@@ -15,20 +15,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<%--    summer note--%>
+    <%--    summer note--%>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="${pageContext.request.contextPath}/css/nav.css" rel="stylesheet" text="text/css"/>
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="/main">HOME</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <c:choose><%--JSTL 조건문--%>
-        <c:when test="${empty principal}"> <%--만약 세션이 없다면--%>
-            <ul class="navbar-nav"><%--네비게이션 바에서 로그인, 회원가입만 보여줌--%>
+<nav class="navbar navbar-expand-lg bg-nav text-uppercase fixed-top" id="mainNav">
+   <div class="container">
+        <a class="navbar-brand" href="/main">HOME</a>
+        <ul class="navbar-nav">
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/">처음으로</a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/socialBoard">사회활동</a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/jobBoard">직무활동</a></li>
+        </ul>
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">회원정보</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#footer">로그아웃</a></li>
+            </ul>
+        </div>
+   </div>
+</nav>
+<%--
+
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <c:choose>&lt;%&ndash;JSTL 조건문&ndash;%&gt;
+        <c:when test="${empty principal}"> &lt;%&ndash;만약 세션이 없다면&ndash;%&gt;
+            <ul class="navbar-nav" style="float: right">&lt;%&ndash;네비게이션 바에서 로그인, 회원가입만 보여줌&ndash;%&gt;
                 <li class="nav-item">
                     <a class="nav-link" href="/auth/loginForm">로그인</a>
                 </li>
@@ -37,11 +64,11 @@
                 </li>
             </ul>
         </c:when>
-        <c:otherwise><%--세션이 있다면--%>
-            <ul class="navbar-nav">
-                <%--<li class="nav-item">&lt;%&ndash;네비게이션 바에서 글쓰기, 회원정보, 로그아웃 보여줌&ndash;%&gt;
-                    <a class="nav-link" href="/board/saveForm">글쓰기</a>
-                </li>--%>
+        <c:otherwise>&lt;%&ndash;세션이 있다면&ndash;%&gt;
+            <ul class="navbar-nav" style="float: right">
+                    &lt;%&ndash;<li class="nav-item">&lt;%&ndash;네비게이션 바에서 글쓰기, 회원정보, 로그아웃 보여줌&ndash;%&gt;
+                        <a class="nav-link" href="/board/saveForm">글쓰기</a>
+                    </li>&ndash;%&gt;
                 <li class="nav-item">
                     <a class="nav-link" href="/user/updateForm">회원정보</a>
                 </li>
@@ -50,6 +77,5 @@
                 </li>
             </ul>
         </c:otherwise>
-        </c:choose>
-    </div>
-</nav>
+    </c:choose>
+</div>--%>
