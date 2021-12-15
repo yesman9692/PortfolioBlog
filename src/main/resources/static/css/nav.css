@@ -660,3 +660,7 @@
         font-size: 1.5em;
     }
 }
+
+.boardTitle{
+    font-weight: bold;
+}

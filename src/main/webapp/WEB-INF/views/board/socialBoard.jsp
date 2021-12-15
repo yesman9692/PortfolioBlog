@@ -3,7 +3,8 @@
 
 <div class="container" style="border-right: solid 1px lightgray; border-left: solid 1px lightgray">
     <br>
-
+    <h2 class="boardTitle">사회활동</h2>
+    <hr>
     <c:forEach var="socialBoard" items="${socialBoard.content}">
         <div class="container-fluid">
             <div class="row" style="margin-bottom: 10px; margin-top: 10px">

@@ -10,8 +10,8 @@
     <br>    <hr>    <br>
     <h3>사용 환경</h3>
     <p><b style="font-weight: bold;">Server:</b> Azure VM / Tomcat Jasper</p>
-    <p><b style="font-weight: bold;">Front-end:</b> Boot Strap / HTML / CSS / JS / JQuery</p>
-    <p><b style="font-weight: bold;">Back-end:</b> Spring Boot / JSP / MySQL</p>
+    <p><b style="font-weight: bold;">Front-end:</b> Boot Strap / HTML / CSS / JS / JSP / JQuery</p>
+    <p><b style="font-weight: bold;">Back-end:</b> Spring Boot / JAVA / JPA / MySQL</p>
     <br>    <hr>    <br>
     <h3>현재 사용 가능한 기능</h3>
     <p>index페이지, 회원가입, 로그인, 로그아웃, 글쓰기, 글 상세보기, 글 목록 페이징, 게시판 분리</p>
