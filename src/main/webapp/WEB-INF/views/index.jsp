@@ -434,7 +434,7 @@
 </footer>
 <!-- Copyright Section-->
 <div class="copyright py-4 text-center text-white">
-    <div class="container"><small>Copyright &copy; wonseokblog 2021</small></div>
+    <div class="container">이 사이트는 PC화면에 최적화 되어있습니다</div>
 </div>
 <!-- Portfolio Modals-->
 <!-- Portfolio Modal 1-->

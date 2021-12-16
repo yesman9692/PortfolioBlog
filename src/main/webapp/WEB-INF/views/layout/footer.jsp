@@ -7,6 +7,9 @@
     <p>yws090296@naver.com</p>
     <p>010-7243-2443</p>
 </div>
+<div class="py-4 text-center text-white" style="background-color: #1a252f">
+    <div class="container">이 사이트는 PC화면에 최적화 되어있습니다</div>
+</div>
 
 <%--Script는 Body가 끝나기 직전에 넣음--%>
 
