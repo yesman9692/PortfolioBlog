@@ -32,6 +32,7 @@ public class BoardService {
         return socialBoardRepository.findAll(pageable); 
     }
 
+    @Transactional(readOnly = true)
     public JobBoard jobBoardDetail(int id) {
         System.out.println("job board id:" + id);
         return jobBoardRepository.findById(id)
@@ -41,6 +42,7 @@ public class BoardService {
                 });
     }
 
+    @Transactional(readOnly = true)
     public SocialBoard socialBoardDetail(int id) {
         System.out.println("social board id:" + id);
         return socialBoardRepository.findById(id)
@@ -74,6 +76,16 @@ public class BoardService {
             System.out.println("UserService:글쓰기(): " + e.getMessage());
             return -1;
         }
+    }
+
+    @Transactional
+    public void deleteJob(int id) {
+        jobBoardRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void deleteSocial(int id) {
+        socialBoardRepository.deleteById(id);
     }
 
     /*@Transactional(readOnly = true) //select할 때 시작, 종료시에 commit(정합성). select를 여러번 하더라도 에러x

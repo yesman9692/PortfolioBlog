@@ -3,9 +3,7 @@ package wonseok.yang.portfolioblog.Controller.API;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import wonseok.yang.portfolioblog.DTO.ResponseDTO;
 import wonseok.yang.portfolioblog.configuration.auth.PrincipalDetail;
 import wonseok.yang.portfolioblog.model.JobBoard;
@@ -27,6 +25,18 @@ public class BoardAPIController {
     @PostMapping("/api/socialBoard")
     public ResponseDTO<Integer> social_save(@RequestBody SocialBoard socialBoard, @AuthenticationPrincipal PrincipalDetail principalDetail) {
         boardService.글쓰기(socialBoard, principalDetail.getUser());
+        return new ResponseDTO<Integer>(HttpStatus.OK, 1);
+    }
+
+    @DeleteMapping("/api/jobBoard/{id}")
+    public ResponseDTO<Integer> job_delete(@PathVariable int id) {
+        boardService.deleteJob(id);
+        return new ResponseDTO<Integer>(HttpStatus.OK, 1);
+    }
+
+    @DeleteMapping("/api/socialBoard/{id}")
+    public ResponseDTO<Integer> social_delete(@PathVariable int id) {
+        boardService.deleteSocial(id);
         return new ResponseDTO<Integer>(HttpStatus.OK, 1);
     }
 

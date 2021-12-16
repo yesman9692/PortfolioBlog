@@ -24,7 +24,7 @@ public class BoardController { //컨트롤러
 
     @GetMapping("socialBoard/{id}")
     public String findByIDs(@PathVariable int id, Model model) {
-        model.addAttribute("jobBoard", boardService.socialBoardDetail(id));
+        model.addAttribute("socialBoard", boardService.socialBoardDetail(id));
         return "board/socialBoardDetail";
     }
 
