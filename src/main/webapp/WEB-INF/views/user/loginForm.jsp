@@ -16,7 +16,7 @@
     <title>로그인</title>
 </head>
 <body cellpadding="0" cellspacing="0" marginleft="0" margintop="0" width="100%" height="100%" align="center">
-
+<%----%>
 <div class="card align-middle" style="width:20rem; border-radius:20px;">
     <div class="card-title" style="margin-top:30px;">
         <h3 class="card-title text-center" style="color:#113366;">로그인이 필요합니다</h3>
