@@ -14,22 +14,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="${pageContext.request.contextPath}/css/login.css" rel="stylesheet" text="text/css" />
     <title>로그인</title>
-
 </head>
-
 <body cellpadding="0" cellspacing="0" marginleft="0" margintop="0" width="100%" height="100%" align="center">
 
 <div class="card align-middle" style="width:20rem; border-radius:20px;">
     <div class="card-title" style="margin-top:30px;">
-        <h2 class="card-title text-center" style="color:#113366;">로그인이 필요합니다</h2>
+        <h3 class="card-title text-center" style="color:#113366;">로그인이 필요합니다</h3>
     </div>
     <div class="card-body">
         <form class="form-signin" action="/auth/loginProc" method="post" style="margin-bottom: 7px">
             <h5 class="form-signin-heading">로그인 정보를 입력하세요</h5>
             <input type="text" name="username" class="form-control" placeholder="Your ID" required autofocus>
             <BR>
-            <input type="password" name="password" class="form-control" placeholder="Password" required>
-            <br>
+            <input type="password" name="password" style="margin-bottom: 10px" class="form-control" placeholder="Password" required>
+            <p style="font-size: small; text-align: center">비밀번호는 Spring Security로 <br>암호화되어 안전하게 저장됩니다.</p>
+
             <button id="btn-login" class="btn btn-lg btn-primary btn-block">로 그 인</button>
         </form>
 
@@ -37,7 +36,6 @@
 
     </div>
 </div>
-
 <div class="modal">
 </div>
 <!-- Optional JavaScript -->

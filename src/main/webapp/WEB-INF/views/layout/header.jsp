@@ -27,12 +27,14 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-nav text-uppercase fixed-top" id="mainNav">
-   <div class="container">
+    <div class="container">
         <a class="navbar-brand" href="/main">HOME</a>
         <ul class="navbar-nav">
             <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/">처음으로</a></li>
-            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/socialBoard">사회활동</a></li>
-            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/jobBoard">직무활동</a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/socialBoard">사회활동</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                                                 href="/board/jobBoard">직무활동</a></li>
         </ul>
         <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -43,19 +45,26 @@
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">회원정보</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#footer">로그아웃</a></li>
+            <c:choose>
+            <c:when test="${empty principal}">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/auth/loginForm">로그인</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/auth/joinForm">회원가입</a></li>
+            </c:when>
+            <c:otherwise>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">내 정보</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/logout">로그아웃</a></li>
+            </c:otherwise>
+            </c:choose>
             </ul>
         </div>
-   </div>
+    </div>
 </nav>
-<%--
+
 
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <c:choose>&lt;%&ndash;JSTL 조건문&ndash;%&gt;
-        <c:when test="${empty principal}"> &lt;%&ndash;만약 세션이 없다면&ndash;%&gt;
-            <ul class="navbar-nav" style="float: right">&lt;%&ndash;네비게이션 바에서 로그인, 회원가입만 보여줌&ndash;%&gt;
+    <c:choose>
+        <c:when test="${empty principal}">
+            <ul class="navbar-nav" style="float: right">
                 <li class="nav-item">
                     <a class="nav-link" href="/auth/loginForm">로그인</a>
                 </li>
@@ -64,11 +73,11 @@
                 </li>
             </ul>
         </c:when>
-        <c:otherwise>&lt;%&ndash;세션이 있다면&ndash;%&gt;
+        <c:otherwise>
             <ul class="navbar-nav" style="float: right">
-                    &lt;%&ndash;<li class="nav-item">&lt;%&ndash;네비게이션 바에서 글쓰기, 회원정보, 로그아웃 보여줌&ndash;%&gt;
-                        <a class="nav-link" href="/board/saveForm">글쓰기</a>
-                    </li>&ndash;%&gt;
+                <li class="nav-item">
+                    <a class="nav-link" href="/board/saveForm">글쓰기</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/updateForm">회원정보</a>
                 </li>
@@ -78,4 +87,4 @@
             </ul>
         </c:otherwise>
     </c:choose>
-</div>--%>
+</div>
