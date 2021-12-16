@@ -28,6 +28,21 @@ public class BoardController { //컨트롤러
         return "board/socialBoardDetail";
     }
 
+    @GetMapping("/jobBoard/updateForm/{id}")
+    public String jobBoardUpdateForm(@PathVariable int id, Model model) {
+        System.out.println("job update button click -> controller, ID:" + id);
+        model.addAttribute("jobBoard", boardService.jobBoardDetail(id));
+        System.out.println("job update button click -> controller -> Service. done");
+        return "board/jobBoardUpdateForm";
+    }
+
+    @GetMapping("/socialBoard/updateForm/{id}")
+    public String socialBoardUpdateForm(@PathVariable int id, Model model) {
+        System.out.println("social update button click -> controller, ID:" + id);
+        model.addAttribute("socialBoard", boardService.socialBoardDetail(id));
+        System.out.println("social update button click -> controller -> Service. done");
+        return "board/socialBoardUpdateForm";
+    }
 
 
     @GetMapping({"", "/"})

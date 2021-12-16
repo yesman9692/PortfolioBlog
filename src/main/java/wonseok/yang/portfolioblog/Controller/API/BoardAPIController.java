@@ -40,6 +40,18 @@ public class BoardAPIController {
         return new ResponseDTO<Integer>(HttpStatus.OK, 1);
     }
 
+    @PutMapping("/api/jobBoard/{id}")
+    public ResponseDTO<Integer> job_update(@PathVariable int id, @RequestBody JobBoard jobBoard) {
+        boardService.jobUpdate(id, jobBoard);
+        return new ResponseDTO<Integer>(HttpStatus.OK, 1);
+    }
+
+    @PutMapping("/api/socialBoard/{id}")
+    public ResponseDTO<Integer> social_update(@PathVariable int id, @RequestBody SocialBoard socialBoard) {
+        boardService.socialUpdate(id, socialBoard);
+        return new ResponseDTO<Integer>(HttpStatus.OK, 1);
+    }
+
     //전통적인 로그인 방식
     /*@PostMapping("/api/user/login")
     public ResponseDTO<Integer> login(@RequestBody User user, HttpSession session) {

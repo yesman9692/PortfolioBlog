@@ -23,18 +23,18 @@ public class BoardService {
 
 
     public Page<JobBoard> 글목록j(Pageable pageable) {
-        System.out.println("글목록j 호출");
+//        System.out.println("글목록j 호출");
         return jobBoardRepository.findAll(pageable);
     }
     
     public Page<SocialBoard> 글목록s(Pageable pageable) {
-        System.out.println("글목록s 호출");
+//        System.out.println("글목록s 호출");
         return socialBoardRepository.findAll(pageable); 
     }
 
     @Transactional(readOnly = true)
     public JobBoard jobBoardDetail(int id) {
-        System.out.println("job board id:" + id);
+//        System.out.println("job board id:" + id);
         return jobBoardRepository.findById(id)
                 .orElseThrow(() -> {
                     System.out.println("job 글 상세보기 실패, id: " + id);
@@ -44,7 +44,7 @@ public class BoardService {
 
     @Transactional(readOnly = true)
     public SocialBoard socialBoardDetail(int id) {
-        System.out.println("social board id:" + id);
+//        System.out.println("social board id:" + id);
         return socialBoardRepository.findById(id)
                 .orElseThrow(() -> {
                     System.out.println("social 글 상세보기 실패, id: " + id);
@@ -76,6 +76,30 @@ public class BoardService {
             System.out.println("UserService:글쓰기(): " + e.getMessage());
             return -1;
         }
+    }
+
+    @Transactional
+    public void jobUpdate(int id, JobBoard requestBoard) {
+        System.out.println("job update service:" + id);
+        JobBoard jobBoard = jobBoardRepository.findById(id)
+                .orElseThrow(() -> {
+                    System.out.println("job 글 찾기 실패, id: " + id);
+                    return new IllegalArgumentException("job 글 찾기 실패: 아이디를 찾을 수 없습니다");
+                });
+        jobBoard.setTitle(requestBoard.getTitle());
+        jobBoard.setContent(requestBoard.getContent());
+    }
+
+    @Transactional
+    public void socialUpdate(int id, SocialBoard requestBoard) {
+        System.out.println("social update service:" + id);
+        SocialBoard socialBoard = socialBoardRepository.findById(id)
+                .orElseThrow(() -> {
+                    System.out.println("social 글 찾기 실패, id: " + id);
+                    return new IllegalArgumentException("social 글 찾기 실패: 아이디를 찾을 수 없습니다");
+                });
+        socialBoard.setTitle(requestBoard.getTitle());
+        socialBoard.setContent(requestBoard.getContent());
     }
 
     @Transactional
