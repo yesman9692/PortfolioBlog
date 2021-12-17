@@ -8,6 +8,7 @@ import wonseok.yang.portfolioblog.DTO.ResponseDTO;
 import wonseok.yang.portfolioblog.configuration.auth.PrincipalDetail;
 import wonseok.yang.portfolioblog.model.JobBoard;
 import wonseok.yang.portfolioblog.model.SocialBoard;
+import wonseok.yang.portfolioblog.model.VisitBoard;
 import wonseok.yang.portfolioblog.service.BoardService;
 
 @RestController
@@ -15,6 +16,8 @@ public class BoardAPIController {
 
     @Autowired
     private BoardService boardService;
+
+
 
     @PostMapping("/api/jobBoard")
     public ResponseDTO<Integer> job_save(@RequestBody JobBoard jobBoard, @AuthenticationPrincipal PrincipalDetail principalDetail) {
@@ -28,6 +31,15 @@ public class BoardAPIController {
         return new ResponseDTO<Integer>(HttpStatus.OK, 1);
     }
 
+    @PostMapping("/api/visitBoard")
+    public ResponseDTO<Integer> visit_save(@RequestBody VisitBoard visitBoard, @AuthenticationPrincipal PrincipalDetail principalDetail) {
+        boardService.글쓰기(visitBoard, principalDetail.getUser());
+        return new ResponseDTO<Integer>(HttpStatus.OK, 1);
+    }
+
+
+
+
     @DeleteMapping("/api/jobBoard/{id}")
     public ResponseDTO<Integer> job_delete(@PathVariable int id) {
         boardService.deleteJob(id);
@@ -40,6 +52,15 @@ public class BoardAPIController {
         return new ResponseDTO<Integer>(HttpStatus.OK, 1);
     }
 
+    @DeleteMapping("/api/visitBoard/{id}")
+    public ResponseDTO<Integer> visit_delete(@PathVariable int id) {
+        boardService.deleteVisit(id);
+        return new ResponseDTO<Integer>(HttpStatus.OK, 1);
+    }
+
+
+
+
     @PutMapping("/api/jobBoard/{id}")
     public ResponseDTO<Integer> job_update(@PathVariable int id, @RequestBody JobBoard jobBoard) {
         boardService.jobUpdate(id, jobBoard);
@@ -49,6 +70,12 @@ public class BoardAPIController {
     @PutMapping("/api/socialBoard/{id}")
     public ResponseDTO<Integer> social_update(@PathVariable int id, @RequestBody SocialBoard socialBoard) {
         boardService.socialUpdate(id, socialBoard);
+        return new ResponseDTO<Integer>(HttpStatus.OK, 1);
+    }
+
+    @PutMapping("/api/visitBoard/{id}")
+    public ResponseDTO<Integer> visit_update(@PathVariable int id, @RequestBody VisitBoard visitBoard) {
+        boardService.visitUpdate(id, visitBoard);
         return new ResponseDTO<Integer>(HttpStatus.OK, 1);
     }
 
