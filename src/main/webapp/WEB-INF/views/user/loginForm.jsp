@@ -24,8 +24,10 @@
     <div class="card-body">
         <form class="form-signin" action="/auth/loginProc" method="post" style="margin-bottom: 7px">
             <h5 class="form-signin-heading">로그인 정보를 입력하세요</h5>
+            <label>Guest ID: guest</label>
             <input type="text" name="username" class="form-control" placeholder="Your ID" required autofocus>
             <BR>
+            <label>Guest PW: guest</label>
             <input type="password" name="password" style="margin-bottom: 10px" class="form-control" placeholder="Password" required>
             <p style="font-size: small; text-align: center">비밀번호는 Spring Security로 <br>암호화되어 안전하게 저장됩니다.</p>
 

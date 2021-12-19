@@ -8,6 +8,8 @@ import wonseok.yang.portfolioblog.model.RoleType;
 import wonseok.yang.portfolioblog.model.User;
 import wonseok.yang.portfolioblog.repository.UserRepository;
 
+import java.util.Optional;
+
 
 @Service
 public class UserService {
