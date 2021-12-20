@@ -7,7 +7,7 @@
     <hr>
     <c:forEach var="socialBoard" items="${socialBoard.content}">
         <div class="container-fluid">
-                <div class="col-sm-8" style="height: 100px; overflow: hidden; text-overflow: ellipsis;">
+                <div class="col-sm-8" style="height: 113px; overflow: hidden; text-overflow: ellipsis;">
                     <h4 class="card-title">
                         <a href="/socialBoard/${socialBoard.id}">${socialBoard.title}</a>
                     </h4>

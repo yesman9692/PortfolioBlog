@@ -7,7 +7,7 @@
     <hr>
     <c:forEach var="jobBoard" items="${jobBoard.content}">
         <div class="container-fluid">
-                <div class="col-sm-8" style="height: 100px; overflow: hidden; text-overflow: ellipsis;">
+                <div class="col-sm-8" style="height: 113px; overflow: hidden; text-overflow: ellipsis;">
                     <h4 class="card-title">
                         <a href="/jobBoard/${jobBoard.id}">${jobBoard.title}</a>
                     </h4>
