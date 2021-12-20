@@ -78,19 +78,19 @@ public class BoardController { //컨트롤러
 
     //게시글 목록 불러오기
     @GetMapping("/board/jobBoard")
-    public String jobBoard(Model model, @PageableDefault(size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+    public String jobBoard(Model model, @PageableDefault(size = 5, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
         model.addAttribute("jobBoard", boardService.글목록j(pageable));
         return "/board/jobBoard";
     }
 
     @GetMapping("/board/socialBoard")
-    public String socialBoard(Model model, @PageableDefault(size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+    public String socialBoard(Model model, @PageableDefault(size = 5, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
         model.addAttribute("socialBoard", boardService.글목록s(pageable));
         return "/board/socialBoard";
     }
 
     @GetMapping("/board/visitBoard")
-    public String visitBoard(Model model, @PageableDefault(size = 6, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+    public String visitBoard(Model model, @PageableDefault(size = 5, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
         model.addAttribute("visitBoard", boardService.글목록v(pageable));
         return "/board/visitBoard";
     }

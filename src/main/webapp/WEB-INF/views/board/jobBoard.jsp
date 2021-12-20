@@ -7,15 +7,13 @@
     <hr>
     <c:forEach var="jobBoard" items="${jobBoard.content}">
         <div class="container-fluid">
-            <div class="row" style="margin-bottom: 10px; margin-top: 10px">
-                <img class="col-sm-4" src="/assets/img/portfolio/1.png" style="height: 185px;"></img>
-                <div class="col-sm-8" style="height: 185px; overflow: hidden; text-overflow: ellipsis;">
+                <div class="col-sm-8" style="height: 100px; overflow: hidden; text-overflow: ellipsis;">
                     <h4 class="card-title">
                         <a href="/jobBoard/${jobBoard.id}">${jobBoard.title}</a>
                     </h4>
                     <p class="card-text">${jobBoard.content}</p>
                 </div>
-            </div>
+
             <hr>
         </div>
     </c:forEach>
