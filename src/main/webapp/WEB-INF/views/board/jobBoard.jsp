@@ -41,6 +41,7 @@
         </c:choose>
     </ul>
     <button type="button" class="btn btn-outline-primary" onclick="location.href='/board/jobBoardWriteForm'" style="float: right">글 쓰기</button>
+
     <br>
     <br>
 

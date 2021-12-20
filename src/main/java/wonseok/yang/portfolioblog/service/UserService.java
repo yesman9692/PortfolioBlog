@@ -1,14 +1,14 @@
 package wonseok.yang.portfolioblog.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import wonseok.yang.portfolioblog.model.RoleType;
 import wonseok.yang.portfolioblog.model.User;
 import wonseok.yang.portfolioblog.repository.UserRepository;
-
-import java.util.Optional;
 
 
 @Service
@@ -35,6 +35,14 @@ public class UserService {
             return -1;
         }
     }
+
+    public User getSession() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = (User) authentication.getPrincipal();
+        System.out.println("userService: getSession함수 호출: "+ user);
+        return user;
+    }
+
 
     /*@Transactional(readOnly = true) //select할 때 시작, 종료시에 commit(정합성). select를 여러번 하더라도 에러x
     public User 로그인(User user) {

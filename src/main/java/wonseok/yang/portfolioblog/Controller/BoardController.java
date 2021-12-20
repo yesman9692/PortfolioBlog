@@ -8,13 +8,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import wonseok.yang.portfolioblog.model.User;
 import wonseok.yang.portfolioblog.service.BoardService;
+import wonseok.yang.portfolioblog.service.UserService;
 
 @Controller
 public class BoardController { //컨트롤러
 
     @Autowired
     private BoardService boardService;
+    private UserService userService;
 
     //view
     @GetMapping({"", "/"})
